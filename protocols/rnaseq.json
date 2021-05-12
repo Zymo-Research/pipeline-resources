@@ -37,20 +37,20 @@
         "hidden": false
     },
     "illumina": {
-        "description": "Illumina TruSeq Stranded Total RNA Library Prep Kit",
+        "description": "Illumina TruSeq RNA Library Prep Kit",
         "clip_r1": 0,
         "clip_r2": 0,
         "three_prime_clip_r1": 0,
         "three_prime_clip_r2": 0,
         "adapter": false,
         "adapter2": false,
-        "strandedness": 2,
-        "strandedness_text": "Reverse",
+        "strandedness": 0,
+        "strandedness_text": "None",
         "trimming_text": "only using Illumina adapters",
         "hidden": false
     },
-    "illumina_mRNA": {
-        "description": "Illumina TruSeq Stranded mRNA Library Prep Kit",
+    "illumina_stranded": {
+        "description": "Illumina TruSeq Stranded Total RNA Library Prep Kit",
         "clip_r1": 0,
         "clip_r2": 0,
         "three_prime_clip_r1": 0,

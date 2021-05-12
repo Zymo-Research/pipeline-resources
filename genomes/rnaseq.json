@@ -1,0 +1,107 @@
+{
+    "GRCh38": {
+        "description": "Homo sapiens(GRCh38)",
+        "star": "s3://zymo-igenomes/zymo/Homo_sapiens/Ensembl/GRCh38/Sequence/STARIndex/",
+        "gtf": "s3://zymo-igenomes/zymo/Homo_sapiens/Ensembl/GRCh38/Annotation/Genes/genes.gtf",
+        "bed12": "s3://zymo-igenomes/zymo/Homo_sapiens/Ensembl/GRCh38/Annotation/Genes/genes.bed",
+        "gprofiler": "hsapiens",
+        "ensembl_web": "www.ensembl.org",
+        "rRNA_gtf": "https://raw.githubusercontent.com/Zymo-Research/pipeline-resources/main/rRNA_gtf/GRCh38.gtf",
+        "public": false,
+        "hidden": false
+    },
+    "GRCh37": {
+        "description": "Homo sapiens(GRCh37)",
+        "star": "s3://ngi-igenomes/igenomes/Homo_sapiens/Ensembl/GRCh37/Sequence/STARIndex/",
+        "gtf": "s3://ngi-igenomes/igenomes/Homo_sapiens/Ensembl/GRCh37/Annotation/Genes/genes.gtf",
+        "bed12": "s3://ngi-igenomes/igenomes/Homo_sapiens/Ensembl/GRCh37/Annotation/Genes/genes.bed",
+        "gprofiler": "hsapiens",
+        "ensembl_web": "www.ensembl.org",
+        "rRNA_gtf": "https://raw.githubusercontent.com/Zymo-Research/pipeline-resources/main/rRNA_gtf/GRCh37.gtf",
+        "public": true,
+        "hidden": false
+    },
+    "GRCm38": {
+        "description": "Mus musculus(GRCm38)",
+        "star": "s3://ngi-igenomes/igenomes/Mus_musculus/Ensembl/GRCm38/Sequence/STARIndex/",
+        "gtf": "s3://ngi-igenomes/igenomes/Mus_musculus/Ensembl/GRCm38/Annotation/Genes/genes.gtf",
+        "bed12": "s3://ngi-igenomes/igenomes/Mus_musculus/Ensembl/GRCm38/Annotation/Genes/genes.bed",
+        "gprofiler": "mmusculus",
+        "ensembl_web": "www.ensembl.org",
+        "rRNA_gtf": "https://raw.githubusercontent.com/Zymo-Research/pipeline-resources/main/rRNA_gtf/GRCm38.gtf",
+        "public": true,
+        "hidden": false
+    },
+    "Rnor_6.0": {
+        "description": "Rattus norvegicus(Rnor_6.0)",
+        "star": "s3://ngi-igenomes/igenomes/Rattus_norvegicus/Ensembl/Rnor_6.0/Sequence/STARIndex/",
+        "gtf": "s3://ngi-igenomes/igenomes/Rattus_norvegicus/Ensembl/Rnor_6.0/Annotation/Genes/genes.gtf",
+        "bed12": "s3://ngi-igenomes/igenomes/Rattus_norvegicus/Ensembl/Rnor_6.0/Annotation/Genes/genes.bed",
+        "gprofiler": "rnorvegicus",
+        "ensembl_web": "www.ensembl.org",
+        "rRNA_gtf": "https://raw.githubusercontent.com/Zymo-Research/pipeline-resources/main/rRNA_gtf/Rnor_6.0.gtf",
+        "public": true,
+        "hidden": false
+    },
+    "ARS-UCD1.2": {
+        "description": "Bos Taurus(ARS-UCD1.2)",
+        "star": "s3://zymo-igenomes/zymo/Bos_Taurus/Ensembl/ARS-UCD1.2/Sequence/STARIndex/",
+        "gtf": "s3://zymo-igenomes/zymo/Bos_Taurus/Ensembl/ARS-UCD1.2/Annotation/Genes/genes.gtf",
+        "bed12": "s3://zymo-igenomes/zymo/Bos_Taurus/Ensembl/ARS-UCD1.2/Annotation/Genes/genes.bed",
+        "gprofiler": "btaurus",
+        "ensembl_web": "www.ensembl.org",
+        "rRNA_gtf": "https://raw.githubusercontent.com/Zymo-Research/pipeline-resources/main/rRNA_gtf/ARS-UCD1.2.gtf",
+        "public": false,
+        "hidden": false
+    },
+    "GRCg6a": {
+        "description": "Gallus gallus(GRCg6a)",
+        "star": "s3://zymo-igenomes/zymo/Gallus_gallus/Ensembl/GRCg6a/Sequence/STARIndex/",
+        "gtf": "s3://zymo-igenomes/zymo/Gallus_gallus/Ensembl/GRCg6a/Annotation/Genes/genes.gtf",
+        "bed12": "s3://zymo-igenomes/zymo/Gallus_gallus/Ensembl/GRCg6a/Annotation/Genes/genes.bed",
+        "gprofiler": "ggallus",
+        "ensembl_web": "www.ensembl.org",
+        "rRNA_gtf": "https://raw.githubusercontent.com/Zymo-Research/pipeline-resources/main/rRNA_gtf/GRCg6a.gtf",
+        "public": false,
+        "hidden": false
+    },
+    "GRCz11": {
+        "description": "Danio rerio(GRCz11)",
+        "star": "s3://zymo-igenomes/zymo/Danio_rerio/Ensembl/GRCz11/Sequence/STARIndex/",
+        "gtf": "s3://zymo-igenomes/zymo/Danio_rerio/Ensembl/GRCz11/Annotation/Genes/genes.gtf",
+        "bed12": "s3://zymo-igenomes/zymo/Danio_rerio/Ensembl/GRCz11/Annotation/Genes/genes.bed",
+        "gprofiler": "drerio",
+        "ensembl_web": "www.ensembl.org",
+        "rRNA_gtf": "https://raw.githubusercontent.com/Zymo-Research/pipeline-resources/main/rRNA_gtf/GRCz11.gtf",
+        "public": false,
+        "hidden": false
+    },
+    "TAIR10": {
+        "description": "Arabidopsis thaliana(TAIR10)",
+        "star": "s3://ngi-igenomes/igenomes/Arabidopsis_thaliana/Ensembl/TAIR10/Sequence/STARIndex/",
+        "gtf": "s3://ngi-igenomes/igenomes/Arabidopsis_thaliana/Ensembl/TAIR10/Annotation/Genes/genes.gtf",
+        "bed12": "s3://ngi-igenomes/igenomes/Arabidopsis_thaliana/Ensembl/TAIR10/Annotation/Genes/genes.bed",
+        "gprofiler": "athaliana",
+        "ensembl_web": "plants.ensembl.org",
+        "public": true,
+        "hidden": false
+    },
+    "R64-1-1": {
+        "description": "Saccharomyces cerevisiae(R64-1-1)",
+        "star": "s3://ngi-igenomes/igenomes/Saccharomyces_cerevisiae/Ensembl/R64-1-1/Sequence/STARIndex/",
+        "gtf": "s3://ngi-igenomes/igenomes/Saccharomyces_cerevisiae/Ensembl/R64-1-1/Annotation/Genes/genes.gtf",
+        "bed12": "s3://ngi-igenomes/igenomes/Saccharomyces_cerevisiae/Ensembl/R64-1-1/Annotation/Genes/genes.bed",
+        "gprofiler": "scerevisiae",
+        "ensembl_web": "www.ensembl.org",
+        "public": true,
+        "hidden": false
+    },
+    "ERCC92": {
+        "description": "ERCC Spike-in(ERCC92)",
+        "star": "s3://zymo-igenomes/zymo/ERCC_spike-in/Thermofisher/ERCC92/Sequence/STARIndex/",
+        "gtf": "s3://zymo-igenomes/zymo/ERCC_spike-in/Thermofisher/ERCC92/Annotation/Genes/genes.gtf",
+        "bed12": "s3://zymo-igenomes/zymo/ERCC_spike-in/Thermofisher/ERCC92/Annotation/Genes/genes.bed",
+        "public": false,
+        "hidden": true
+    }
+}

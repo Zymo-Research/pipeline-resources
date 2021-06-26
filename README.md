@@ -4,7 +4,7 @@ Repository for resources and documentation files of Zymo bioinformatics pipeline
 ## RNAseq
 * [Sample report](https://zymo-research.github.io/pipeline-resources/reports/RNAseq_sample_report.html)<br>
 This report is generated using public data from [this paper](https://www.ncbi.nlm.nih.gov/pubmed/26952870).
-* [Report documentation](report_docs/how_to_use_RNAseq_report.md)
+* [Report documentation](report_docs/RNAseq_documentation.md)
 * [Methods template](methods_docs/RNAseq_method.docx)
 * [Pipeline Flowchart](images/RNAseq/RNAseq_flowchart.png)
 * [Genomes settings](genomes/rnaseq.json)

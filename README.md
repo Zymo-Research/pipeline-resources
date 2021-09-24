@@ -1,5 +1,5 @@
 # pipeline-resources
-Repository for resources and documentation files of Zymo bioinformatics pipelines. Files that can be frequently updaetd independent of the pipelines are stored here for easier version control of pipelines. They include genome files locations, protocol settings, special annotaiton files, sample reports, documentations, etc.
+Repository for resources and documentation files of Zymo bioinformatics pipelines. Files that can be frequently updated independent of the pipelines are stored here for easier version control of pipelines. They include genome files locations, protocol settings, special annotation files, sample reports, documentation, etc.
 
 ## RNAseq
 * [Sample report](https://zymo-research.github.io/pipeline-resources/reports/RNAseq_sample_report.html)<br>

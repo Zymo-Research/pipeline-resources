@@ -1,7 +1,8 @@
 # pipeline-resources
 Repository for resources and documentation files of Zymo bioinformatics pipelines. Files that can be frequently updated independent of the pipelines are stored here for easier version control of pipelines. They include genome files locations, protocol settings, special annotation files, sample reports, documentation, etc.
 
-## RNAseq
+## bulk RNAseq
+* [About page](about_pages/about_RNAseq.md)
 * [Sample report](https://zymo-research.github.io/pipeline-resources/reports/RNAseq_sample_report.html)<br>
 This report is generated using public data from [this paper](https://www.ncbi.nlm.nih.gov/pubmed/26952870).
 * [Report documentation](report_docs/RNAseq_documentation.md)

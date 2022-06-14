@@ -10,3 +10,4 @@ This report is generated using public data from [this paper](https://www.ncbi.nl
 * [Pipeline Flowchart](images/RNAseq/RNAseq_flowchart.png)
 * [Genomes settings](genomes/rnaseq.json)
 * [Protocols settings](protocols/rnaseq.json)
+* [Test data](test_data/RNAseq/aladdin_test_data.zip)

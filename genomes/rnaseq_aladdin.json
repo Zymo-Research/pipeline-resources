@@ -45,9 +45,9 @@
     },
     "ARS-UCD1.2": {
         "description": "Bos Taurus(ARS-UCD1.2)",
-        "star": "s3://aladdin-genomes/Bos_Taurus/Ensembl/ARS-UCD1.2/Sequence/STARIndex/",
-        "gtf": "s3://aladdin-genomes/Bos_Taurus/Ensembl/ARS-UCD1.2/Annotation/Genes/genes.gtf",
-        "bed12": "s3://aladdin-genomes/Bos_Taurus/Ensembl/ARS-UCD1.2/Annotation/Genes/genes.bed",
+        "star": "s3://aladdin-genomes/Bos_taurus/Ensembl/ARS-UCD1.2/Sequence/STARIndex/",
+        "gtf": "s3://aladdin-genomes/Bos_taurus/Ensembl/ARS-UCD1.2/Annotation/Genes/genes.gtf",
+        "bed12": "s3://aladdin-genomes/Bos_taurus/Ensembl/ARS-UCD1.2/Annotation/Genes/genes.bed",
         "gprofiler": "btaurus",
         "ensembl_web": "www.ensembl.org",
         "rRNA_gtf": "https://raw.githubusercontent.com/Zymo-Research/pipeline-resources/main/rRNA_gtf/ARS-UCD1.2.gtf",

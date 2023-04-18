@@ -13,7 +13,7 @@ This report is generated using public data from [this paper](https://www.ncbi.nl
 * [Test data](test_data/RNAseq/aladdin_test_data.zip)
 
 ## bisulfite sequencing
-* [About page](about_pages/about_bsbolt.md)
-* [Sample report](https://zymo-research.github.io/pipeline-resources/reports/BSBolt_sample_report.html)
+* [About page](about_pages/about_BSBolt.md)
+* [Sample report](reports/BSBolt_sample_report.html)
 * [Report documentation](report_docs/BSBolt_documentation.md)
-* [Test data](test_data/RNAseq/bsbolt_test_data.zip)
+* [Test data](test_data/BSBolt/bsbolt_test_data.zip)

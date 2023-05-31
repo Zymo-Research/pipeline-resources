@@ -99,6 +99,10 @@ This section plots how many miRNA hairpins are detected at different sequencing 
 
 [`RSEM`](http://deweylab.github.io/RSEM/README.html) quantifies the number of reads derived from miRNA, tRNA, rRNA, lncRNA, miscRNA, scaRNA, snoRNA, and snRNA. The "unmapped" category most likely encompasses other small RNAs such as piRNA, siRNA, etc. You can use the button on the top left to toggle between numbers and percentages of reads. 
 
+High confidence mature tRNA sequences are downloaded from GtRNAdb. An example GtRNAdb access link for GRCh38 can be viewed [here](http://gtrnadb.ucsc.edu/genomes/eukaryota/Hsapi38/Hsapi38-seq.html). miRBase hairpin sequences are used as reference for miRNAs. miRNA hairpin sequences for all species in miRBase are available in a single FASTA [file](https://mirbase.org/ftp.shtml). [seqkit](https://bioinf.shenwei.me/seqkit/) was used to extract species-specific sequences from the miRBase hairpin file, as well as convert GtRNAdb and miRBase reference sequences from RNA to DNA format. For other RNA types, Aladdin uses an Ensembl noncoding RNA file with mitochondrial tRNA, lncRNA, snoRNA, scaRNA, snRNA, miscellaneous RNA, and rRNA sequences. An example noncoding RNA file for GRCh38 can be viewed [here](https://ftp.ensembl.org/pub/release-105/fasta/homo_sapiens/ncrna/). Sequences with desired gene_biotypes were all extracted with seqkit from the noncoding RNA file. Transcripts that did not belong to the primary assembly GTF were removed. rRNA reference sequences were supplemented with additional Repeatmasker sequences from [UCSC’s Table Browser](https://genome.ucsc.edu/cgi-bin/hgTables) with identifiers LSU-rRNA_Hsa, 5S, and SSU-rRNA_Hsa. 
+
+[`Bowtie`](https://bowtie-bio.sourceforge.net/index.shtml) alignments to the above reference sequences are quantified with [`RSEM`](http://deweylab.github.io/RSEM/README.html). Resulting counts are used to generate the Estimated RNA Type Counts table.
+
 ![Estimated RNA Type Counts](../images/smRNAseq/smallRNA_EstimatedRNATypes.jpeg)
 
 ## Comparison of samples

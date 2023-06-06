@@ -16,7 +16,7 @@ This report is generated using public data from [this paper](https://www.ncbi.nl
 * [Sample report](https://zymo-research.github.io/pipeline-resources/reports/smRNAseq_sample_report.html)<br>
 This report is generated using public data from [this paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5766192).
 * [Report documentation](report_docs/smRNAseq_documentation.md)
-* [Methods template](method_docs/smRNAseq_method.docx)
+* [Methods template](method_docs/smallRNAseq_method.docx)
 
 ## Methylseq (methylcheck)
 * [Sample report](https://zymo-research.github.io/pipeline-resources/reports/methylseq_sample_report.html)

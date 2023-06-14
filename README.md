@@ -28,6 +28,9 @@ This report is generated using public data from [this paper](https://www.ncbi.nl
 * [Report documentation](report_docs/BSBolt_documentation.md)
 * [Test data](test_data/BSBolt/bsbolt_test_data.zip)
 
+## rRNA amplicon sequencing (ampliseq)
+* [Sample report](https://zymo-research.github.io/pipeline-resources/reports/ampliseq_sample_report.html)
+
 ## MIQscore
 * [Sample report for 16S](https://zymo-research.github.io/pipeline-resources/reports/MIQscore_16S_sample_report.html)
 * [Sample report for shotgun](https://zymo-research.github.io/pipeline-resources/reports/MIQscore_shotgun_sample_report.html)

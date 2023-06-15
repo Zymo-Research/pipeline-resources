@@ -108,7 +108,7 @@ data. Here are some you can use to assess the data:
     refer to the section [CpG Coverage](#cpg-coverage) for the counts of
     cytosines at different read coverage levels.
 
-<img src="../images/methycheck/general_statistics.png" width="100%" style="display: block; margin: auto;" />
+<img src="../images/methylcheck/general_statistics.png" width="100%" style="display: block; margin: auto;" />
 
 ## FastQC (raw)
 
@@ -123,7 +123,7 @@ warning is issued if any metric fails.
 The histogram show the number of PE/SE reads for each sample. Duplicate reads
 are an estimate only and are separated from unique reads.
 
-<img src="../images/methycheck/fastqc_sequence_counts_plot.png" width="100%" style="display: block; margin: auto;" />
+<img src="../images/methylcheck/fastqc_sequence_counts_plot.png" width="100%" style="display: block; margin: auto;" />
 
 ### Sequence Quality Histograms
 
@@ -133,7 +133,7 @@ per base along read length. Normally, the base quality decreases towards
 3’end. This provides information on whether 3’end quality trimming is
 needed.
 
-<img src="../images/methycheck/fastqc_per_base_sequence_quality_plot.png" width="100%" style="display: block; margin: auto;" />
+<img src="../images/methylcheck/fastqc_per_base_sequence_quality_plot.png" width="100%" style="display: block; margin: auto;" />
 
 ### Per Sequence Quality Scores
 
@@ -142,7 +142,7 @@ averaging the Phred scores of all bases in a read. It is expected that
 peaks are at values &gt; 28; if you see peaks at lower values, it is a
 warning sign of low quality libraries.
 
-<img src="../images/methycheck/fastqc_per_sequence_quality_scores_plot.png" width="100%" style="display: block; margin: auto;" />
+<img src="../images/methylcheck/fastqc_per_sequence_quality_scores_plot.png" width="100%" style="display: block; margin: auto;" />
 
 ### Per Base Sequence Content
 
@@ -152,26 +152,26 @@ average base compositions with samples as rows and positions as columns.
 When hovering mouse over the plot, the nucleotide compositions are shown
 at top of the plot.
 
-<img src="../images/methycheck/fastqc_per_base_sequence_content_plot.png" width="100%" style="display: block; margin: auto;" />
+<img src="../images/methylcheck/fastqc_per_base_sequence_content_plot.png" width="100%" style="display: block; margin: auto;" />
 
 One can click on one row/sample to have a detailed view on how
 nucleotide composition changes over read length. The composition is
 expected to be even over read length.
 
-<img src="../images/methycheck/fastqc_per_base_sequence_content_plot.zoom.png" width="100%" style="display: block; margin: auto;" />
+<img src="../images/methylcheck/fastqc_per_base_sequence_content_plot.zoom.png" width="100%" style="display: block; margin: auto;" />
 
 ### Per Sequence GC Content
 
 This plot shows the distributions of reads’ GC content, that is, the
 percentages of G and C nucleotides in a read.
 
-<img src="../images/methycheck/fastqc_per_sequence_gc_content_plot.png" width="100%" style="display: block; margin: auto;" />
+<img src="../images/methylcheck/fastqc_per_sequence_gc_content_plot.png" width="100%" style="display: block; margin: auto;" />
 
 ### Per Base N Content
 
 The plots shows the percentage of an undetermined basecall `N` at each position. Reads with N content greater than 5% usually indicates poor sequencing quality or other technical issues.
 
-<img src="../images/methycheck/fastqc_per_base_n_content_plot.png" width="100%" style="display: block; margin: auto;" />
+<img src="../images/methylcheck/fastqc_per_base_n_content_plot.png" width="100%" style="display: block; margin: auto;" />
 
 ### Sequence Length Distribution
 
@@ -182,7 +182,7 @@ from the input fastq files. For raw reads that contain uniform sequence length, 
 
 Duplicated sequences refer to the occurance of the same or highly similar reads that can arise from PCR artifacts or biological duplicats. In a diverse library like WGBS, the majority of the reads should occur only once. Therefore, the highest peak should be observed on the leftmost side of the plot. A warning will be issued if non-unique sequences make up more than 20% of the total.
 
-<img src="../images/methycheck/fastqc_sequence_duplication_levels_plot.png" width="100%" style="display: block; margin: auto;" />
+<img src="../images/methylcheck/fastqc_sequence_duplication_levels_plot.png" width="100%" style="display: block; margin: auto;" />
 
 ### Overrepresented sequences
 
@@ -190,7 +190,7 @@ If there are overrepresented sequences, such as contamination, enriched
 fragments, or duplicated reads, this section will show the frequencies
 of the top representative sequences (frequency &gt; 0.1%).
 
-<img src="../images/methycheck/fastqc_overrepresented_sequences_plot.png" width="100%" style="display: block; margin: auto;" />
+<img src="../images/methylcheck/fastqc_overrepresented_sequences_plot.png" width="100%" style="display: block; margin: auto;" />
 
 ### Adapter Content
 
@@ -201,7 +201,7 @@ a position, then this read is counted for all subsequent positions.
 When running this analysis on already trimmed sequences, one expects to
 see no adapters, as displayed here.
 
-<img src="../images/methycheck/fastqc_adapter_content_plot.png" width="100%" style="display: block; margin: auto;" />
+<img src="../images/methylcheck/fastqc_adapter_content_plot.png" width="100%" style="display: block; margin: auto;" />
 
 ## Cutadapt
 
@@ -225,7 +225,7 @@ segments are true adapters. One can see [cutadapt’s
 guide](https://cutadapt.readthedocs.io/en/latest/guide.html#how-to-read-the-report)
 for more explanation.
 
-<img src="../images/methycheck/cutadapt_trimmed_sequences_plot.png" width="100%" style="display: block; margin: auto;" />
+<img src="../images/methylcheck/cutadapt_trimmed_sequences_plot.png" width="100%" style="display: block; margin: auto;" />
 
 ### Filtered Reads
 
@@ -246,7 +246,7 @@ One can toggle the tabs between *Counts* and *Percentages* to view the
 numbers and percentages of filtered reads, a feature available for most
 plots in the report.
 
-<img src="../images/methycheck/trimgalore_filtered_reads_plot.png" width="100%" style="display: block; margin: auto;" />
+<img src="../images/methylcheck/trimgalore_filtered_reads_plot.png" width="100%" style="display: block; margin: auto;" />
 
 ## FastQC (trimmed)
 
@@ -275,7 +275,7 @@ following categories:
 For downstream analyses such as calling methylation, only *Aligned
 Uniquely* reads are used.
 
-<img src="../images/methycheck/bismark_alignment.png" width="100%" style="display: block; margin: auto;" />
+<img src="../images/methylcheck/bismark_alignment.png" width="100%" style="display: block; margin: auto;" />
 
 ### Strand Alignment
 
@@ -296,7 +296,7 @@ For a directional sequencing library, you may only see reads from
 original top and bottom strands, but for non-directional one, you will
 see reads from all four strands.
 
-<img src="../images/methycheck/bismark_strand_alignment.png" width="100%" style="display: block; margin: auto;" />
+<img src="../images/methylcheck/bismark_strand_alignment.png" width="100%" style="display: block; margin: auto;" />
 
 ### M-bias
 
@@ -305,7 +305,7 @@ read. The methylation value is computed by averaging the methylation
 values at a position across all reads in a sample. Normally, one expects
 the methylation value stays constant along base positions.
 
-<img src="../images/methycheck/bismark_mbias.png" width="100%" style="display: block; margin: auto;" />
+<img src="../images/methylcheck/bismark_mbias.png" width="100%" style="display: block; margin: auto;" />
 
 ## Picard
 
@@ -314,7 +314,7 @@ For RRBS, one may see multiple spikes in the range from 40 to 220 bps
 due to *MspI* digestions (see explanation
 [here](http://www.bioinformatics.babraham.ac.uk/projects/bismark/RRBS_Guide.pdf)).
 
-<img src="../images/methycheck/picard_insert_size.png" width="100%" style="display: block; margin: auto;" />
+<img src="../images/methylcheck/picard_insert_size.png" width="100%" style="display: block; margin: auto;" />
 
 ## CpG Coverage
 
@@ -323,17 +323,17 @@ under different read coverages. Here, only cytosines covered by at least
 one read are considered. For easy visualization, the read coverage (aka.
 read depth) is divided into four ranges: 1-4, 5-9, 10-49, 50-99, &gt;=100.
 
-<img src="../images/methycheck/cpg_coverage.png" width="100%" style="display: block; margin: auto;" />
+<img src="../images/methylcheck/cpg_coverage.png" width="100%" style="display: block; margin: auto;" />
 
 ## Software
 
 The software and their corresponding versions used in the pipeline are listed in this section.
 
-<img src="../images/methycheck/software.png" width="100%" style="display: block; margin: auto;" />
+<img src="../images/methylcheck/software.png" width="100%" style="display: block; margin: auto;" />
 
 ## Summary
 
 This section shows some parameters used in data analyses, such as
 trimming parameters, reference genome, etc.
 
-<img src="../images/methycheck/summary.png" width="100%" style="display: block; margin: auto;" />
+<img src="../images/methylcheck/summary.png" width="100%" style="display: block; margin: auto;" />

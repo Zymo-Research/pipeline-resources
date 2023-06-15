@@ -18,7 +18,7 @@ This report is generated using public data from [this paper](https://www.ncbi.nl
 
 ## Methylseq (methylcheck)
 * [Sample report](https://zymo-research.github.io/pipeline-resources/reports/methylseq_sample_report.html)
-* [Report documentation](https://github.com/Zymo-Research/nxf-methylcheck/blob/main/docs/how-to-read-report.md)
+* [Report documentation](report_docs/methylcheck_documentation.md)
 
 ## bisulfite sequencing (BSBolt)
 * [About page](about_pages/about_BSBolt.md)

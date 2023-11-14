@@ -99,7 +99,9 @@ This 3-D plot displays principle coordinate analysis results calculated using th
 ![Beta diversity plot](../images/shotgun/beta_diversity.png)
 
 ## Comparative diversity analysis
+
 >**This section is experimental and under development!**
+
 This section is very similar to the "Diversity analysis" section, except that in addition to user provided samples, a large cohort of reference samples are added in the diversity analysis. In this sample report, the reference dataset is a collection of healthy human gut microbiome samples from both public data and private data from Zymo Research. The hope is that it can provide a large number and therefore more complete picture of healthy human gut microbiome than a typical "control" group in a study. This function can be useful when user have limited number of samples but want something to compare to. The comparison here is crude considering there may be batch effects, protocol biases, and other factors in the reference dataset. We welcome suggestions to improve this part of the pipeline/report.
 
 ### Alpha diversity compared with reference

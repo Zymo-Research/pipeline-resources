@@ -35,7 +35,7 @@ For further information, please check out the following resources:
 ### Settings
 - Background information including `Sample metadata`, `Report configuration`, and `Virtual gene panel`.
 
-![Settings](../images/pcgr-cpsr/cpsr_settings.png)
+![Settings](../images/pcgr-cpsr/cpsr-settings.png)
 
 ### Summary of Findings
 - An overview of the key genetic findings, including pathogenic variants and their associated cancer risks.

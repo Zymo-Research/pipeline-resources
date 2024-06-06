@@ -22,6 +22,7 @@ Depending on the options and samples provided, the pipeline can currently perfor
   - `msi_caller` : Activate [`MSIsensorpro`](https://github.com/xjtu-omics/msisensor-pro) to assess microsatellite instability (MSI) using paired tumor-normal samples (defined by status in 'metadata.csv').
 
 - Variant filtering and annotation ([`Ensembl VEP`](https://github.com/Ensembl/ensembl-vep))
+- Categorize Single Nucleotide Variants (SNVs) and Insertions/Deletions (InDels) detected in somatic ([PCGR](https://github.com/sigven/pcgr)) and germline samples ([CPSR](https://sigven.github.io/cpsr/))
 - Summarise and represent QC ([`MultiQC`](http://multiqc.info/))
 
 

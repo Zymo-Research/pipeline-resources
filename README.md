@@ -41,3 +41,9 @@ This report is generate using some samples from [this paper](https://pubmed.ncbi
 * [Sample report for 16S](https://zymo-research.github.io/pipeline-resources/reports/MIQscore_16S_sample_report.html)
 * [Sample report for shotgun](https://zymo-research.github.io/pipeline-resources/reports/MIQscore_shotgun_sample_report.html)
 * [Report documentation](report_docs/MIQscore_documentation.md)
+
+## Genomics
+* [About page](about_pages/about_aladdin_genomics.md)
+* [Sample report](https://zymo-research.github.io/pipeline-resources/reports/aladdin_genomics_sample_report.html)<br>
+This report is generate using some samples from [this paper](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-03934-3).
+* [Report documentation](report_docs/genomics_documentation.md)

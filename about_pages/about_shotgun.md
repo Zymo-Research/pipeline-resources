@@ -26,3 +26,34 @@ This pipeline is built using [Nextflow](https://www.nextflow.io/). A brief summa
 10. Present all results in above steps in a report ([`MultiQC`](http://multiqc.info/))
     
 For details, please find the source code [here](https://github.com/Zymo-Research/aladdin-shotgun).
+
+## Pipeline parameters: Trimming
+### `--shortread_qc_tool`
+Default: fastp
+
+Options: 
+
+         --shortread_qc_tool fastp
+
+         --shortread_qc_tool adapterremoval
+         
+         --shortread_qc_tool DO_NOT_RUN
+         
+Specify which tool to use for short-read quality control. The tool chosen will remove adapters, trim low quality bases, remove reads that are too short, etc. Choose 'DO_NOT_RUN' if you don't want this step performed. 
+
+### `--shortread_qc_skipadaptertrim`
+
+
+#### shortread_qc_skipadaptertrim     = false
+#### shortread_qc_mergepairs          = false
+#### shortread_qc_includeunmerged     = false
+#### shortread_qc_adapter1            = null
+#### shortread_qc_adapter2            = null
+#### shortread_qc_adapterlist         = null
+#### shortread_qc_minlength           = 15
+
+### BBDuk parameters
+
+### Sourmash parameters
+
+## Sourmash default databases

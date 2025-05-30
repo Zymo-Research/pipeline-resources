@@ -122,7 +122,24 @@ Specifying a mimum read length filtering can speed up profiling by reducing the 
 > - removed from reads `--length_required`
 > - AdapterRemoval: `--minlength`
 
-### BBDuk parameters
+## Pipeline parameters: Complexity filtering
+
+### `--shortread_complexityfilter_tool`
+
+### `--shortread_complexityfilter_entropy`
+
+### `--shortread_complexityfilter_bbduk_windowsize`
+
+### `--shortread_complexityfilter_bbduk_mask`
+
+### `--shortread_complexityfilter_fastp_threshold`
+
+### `--shortread_complexityfilter_prinseqplusplus_mode`
+
+### `--shortread_complexityfilter_prinseqplusplus_dustscore`
+
+### `--save_complexityfiltered_reads`
+
 
 ### Sourmash parameters
 

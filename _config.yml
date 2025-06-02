@@ -1,0 +1,13 @@
+# _config.yml
+
+title: Pipeline Resources
+description: Documentation site for pipeline resources
+
+baseurl: "/pipeline-resources"
+url: "https://zymo-research.github.io"
+
+theme: just-the-docs
+color_scheme: light
+
+just_the_docs:
+  search_enabled: true

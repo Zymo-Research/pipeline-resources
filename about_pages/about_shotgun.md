@@ -27,120 +27,38 @@ This pipeline is built using [Nextflow](https://www.nextflow.io/). A brief summa
     
 For details, please find the source code [here](https://github.com/Zymo-Research/aladdin-shotgun).
 
-## Pipeline parameters: Trimming
-### `--shortread_qc_tool`
-Options: 
+## Pipeline parameters: fastp trimming
 
-         --shortread_qc_tool fastp
+The **adapter** is specified by the user. If no adapter is specified, fastp will automatically detect adapter sequences.
 
-         --shortread_qc_tool adapterremoval
-         
-         --shortread_qc_tool DO_NOT_RUN
-         
-Specify which tool to use for short-read quality control. The tool chosen will remove adapters, trim low quality bases, remove reads that are too short, etc. Choose 'DO_NOT_RUN' if you don't want this step performed. Default is `--shortread_qc_tool fastp`.
+The **minimum length** filter is set by default to **15**.
 
-### `--shortread_qc_skipadaptertrim`
-Options:
+## Pipeline parameters: BBDuk complexity filtering
 
-         --shortread_qc_skipadaptertrim true
+BBDuk offers a **minimum entropy** read threshold option between 0 to 1, with 0 being a read with only one repeated base and 1 being completely random. The default for this pipeline is **0.3**.
 
-         --shortread_qc_skipadaptertrim false
+Entropy is calcuated with a **sliding window** of **50** basepairs by default.
 
-Skip the removal of sequencing adapters. 
+Sequences that do not meet entropy thresholds are **automatically discarded**.
 
-This often can be useful to speed up run-time of the pipeline when analysing data downloaded from public databases such as the ENA or SRA, as adapters should already be removed (however, we recommend to check FastQC results to ensure this is the case).
+## Pipeline parameters: Sourmash taxonomic classification
 
-### `--shortread_qc_mergepairs`
-Options:
+In this pipeline, sourmash uses a default **k-mer length** of **31**.
 
-         --shortread_qc_mergepairs true
+Sourmash generates a **scaled** MinHash from a provided reference with kmers sampled at 1 per **1000** basepairs.
 
-         --shortread_qc_mergepairs false
+Matches of k-mers to reference hashes are weighted by the **abundance** of the hash in the sample metagenome.
 
-Turn on the merging of read-pairs of paired-end short read sequencing data. 
+By default, sourmash matches k-mers to **database sourmash-zymo-2024**.
 
-> Modifies tool parameter(s):
-> > - AdapterRemoval: `--collapse`
-> > - fastp: `-m --merged_out`",
-
-### `--shortread_qc_includeunmerged`   
-Options:
-
-         --shortread_qc_includeunmerged true
-
-         --shortread_qc_includeunmerged false
-
-Turns on the inclusion of unmerged reads in resulting FASTQ file from merging paired-end sequencing data when using `fastp` and/or `AdapterRemoval`. For `fastp` this means the unmerged read pairs are directly included in the output FASTQ file. For `AdapterRemoval`, additional output files containing unmerged reads are all concatenated into one file by the workflow.
-
-Excluding unmerged reads can be useful in cases where you prefer to have very short reads (e.g. aDNA), thus excluding longer-reads or possibly faulty reads where one of the pair was discarded.
-
-> Adds `fastp` option: `--include_unmerged`
-         
-### `--shortread_qc_adapter1`
-Options:
-
-         --shortread_qc_adapter1 [string]
-         
-Specify a custom forward or R1 adapter sequence to be removed from reads.
-
-If not set, the selected short-read QC tool's defaults will be used.\n\n> Modifies tool parameter(s):
-> - fastp: `--adapter_sequence`. fastp default: `AGATCGGAAGAGCACACGTCTGAACTCCAGTCA`
-> - AdapterRemoval: `--adapter1`. AdapteRemoval2 default: `AGATCGGAAGAGCACACGTCTGAACTCCAGTCACNNNNNNATCTCGTATGCCGTCTTCTGCTTG`
-         
-### `--shortread_qc_adapter2` 
-Options:
-
-         --shortread_qc_adapter2 [string]
-
-Specify a custom reverse or R2 adapter sequence to be removed from reads.
-
-If not set, the selected short-read QC tool's defaults will be used.\n\n> Modifies tool parameter(s):
-> - fastp: `--adapter_sequence`. fastp default: `AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT`
-> - AdapterRemoval: `--adapter1`. AdapteRemoval2 default: `AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGTAGATCTCGGTGGTCGCCGTATCATT`"
-
-### `--shortread_qc_adapterlist`
-Options:
-
-         --shortread_qc_adapterlist [filepath string]
-
-Allows to supply a file with a list of adapter (combinations) to remove from all files.
-
-Overrides the --shortread_qc_adapter1/--shortread_qc_adapter2 parameters . 
-
-For AdapterRemoval this consists of a two column table with a `.txt` extension: first column represents forward strand, second column for reverse strand. You must supply all possible combinations, one per line, and this list is applied to all files. See AdapterRemoval documentation for more information.
-
-For fastp this consists of a standard FASTA format with a `.fasta`/`.fa`/`.fna`/`.fas` extension. The adapter sequence in this file should be at least 6bp long, otherwise it will be skipped. fastp trims the adapters present in the FASTA file one by one.\n\n> Modifies AdapterRemoval parameter: --adapter-list\n> Modifies fastp parameter: --adapter_fasta",
-
-### `--shortread_qc_minlength`
-Options:
-
-         --shortread_qc_minlength [int]
-
-Specifying a mimum read length filtering can speed up profiling by reducing the number of short unspecific reads that need to be match/aligned to the database.
-
-> Modifies tool parameter(s):
-> - removed from reads `--length_required`
-> - AdapterRemoval: `--minlength`
-
-## Pipeline parameters: Complexity filtering
-
-### `--shortread_complexityfilter_tool`
-
-### `--shortread_complexityfilter_entropy`
-
-### `--shortread_complexityfilter_bbduk_windowsize`
-
-### `--shortread_complexityfilter_bbduk_mask`
-
-### `--shortread_complexityfilter_fastp_threshold`
-
-### `--shortread_complexityfilter_prinseqplusplus_mode`
-
-### `--shortread_complexityfilter_prinseqplusplus_dustscore`
-
-### `--save_complexityfiltered_reads`
-
-
-### Sourmash parameters
+The minimum estimated **basepair overlap** between a sample and the reference for a match to be reported in sourmash is **5,000**.
 
 ## Sourmash default databases
+
+## Pipeline filtering criteria
+
+Under the following criteria, a sample may be dropped from the pipeline:
+
+1. Samples with a file size <1 kb after trimming and read length filtering are excluded.
+2. Samples with no identified microbial genomes by sourmash after host genome filtering are excluded.
+3. Samples with less than 1,000 reads assigned to non-host organisms cannot pass filtering.

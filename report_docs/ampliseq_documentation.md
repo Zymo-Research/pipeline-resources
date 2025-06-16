@@ -31,20 +31,21 @@ The bioinformatics report is generated using [`MultiQC`](https://multiqc.info/).
 
 ## General statistics table
 [The general statistics table](https://zymo-research.github.io/pipeline-resources/reports/ampliseq_sample_report.html#general_stats) gives an overview of some important sample information. From left to right, this table contains:
-1. The raw number of sequencing reads obtained per sample (`Seqs`).
+1. The raw number of sequencing reads obtained per sample (`No. Seqs`).
 2. The average % GC content of reads (`% GC`).
-3. The total percentage of nucleotides trimmed from the raw sequences (`% bp Trimmed`).
-4. The number of reads input to DADA2 (`DADA2 Inputs`).
-5. The percentage of chimeric reads detected (`Chimera Error Rate`). Chimeric reads are sequencing artifacts resulting from the spurious joining of two or more independent biological sequences, which can be misinterpreted as novel organisms.
-6. How many reads were retained following DADA2 filtering and trimming (`Reads Passed DADA2`).
-7. The number and percentage of read counts that were retained following plastid rRNA filtering (`Retained Taxa Filtered` and `% Retained Taxa Filtered`, respectively).
+3. The total percentage of reads passing trimming filters (`% Passing trimming filter`).
+4. The number of reads input to DADA2 (`DADA2 Input`).
+5. The number of reads passing DADA2 quality filtering `(DADA2 qual filter`)
+6. The number of reads after merging of R1 and R2 reads with sufficient overlap (`DADA2 merge pairs`)
+7. The number of non-chimeric reads detected (`DADA2 non-chimera`). Chimeric reads are sequencing artifacts resulting from the spurious joining of two or more independent biological sequences, which can be misinterpreted as novel organisms.
+8. The number of read counts that were retained following plastid rRNA filtering (`DADA2 filter tax`).
 
 ![Image2](../images/ampliseq/Image2.png)
 
 These statistics are collected from different parts of the pipeline workflow to give you a snapshot of the results and are a quick way to evaluate how your ampliseq experiment went. Here are a few important considerations when reading this table:
-1. Ensure a high number of reads are retained following Cutadapt and DADA2. A dropout of reads at the Cutadapt trimming step (column `DADA2 inputs`) may result from selecting the incorrect sequencing primers at the pipeline run set-up stage. A dropout of reads during DADA2 processing (column `Reads Passed DADA2`) can result from a high chimera rate (see below) and failure to merge paired-end reads due to insufficient overlap
-2. There is a low % chimeric reads (column `Chimera Error Rate`). A high percentage (>5%) of chimeric reads can result from suboptimal PCR reactions when performing mixed template PCR. 
-3. Few read counts were removed from the ASV table following contamination filtering (column `Retained Taxa Filtered`). Removal of a high percentage of read counts at this stage can indicate a high portion of reads amplified plastid sequences (chloroplast and mitochondria) and that your experimental design may need to be revised.
+1. Ensure a high number of reads are retained following Cutadapt and DADA2. A dropout of reads at the Cutadapt trimming step (column DADA2 input) may result from selecting the incorrect sequencing primers at the pipeline run set-up stage. A dropout of reads during DADA2 processing (column DADA2 qual filter, DADA2 merge pairs, DADA2 non-chimera) can result from a high chimera rate (see below) and failure to merge paired-end reads due to insufficient overlap
+2. There is a low % chimeric reads retained in DADA2 non-chimera. A high percentage (>5%) of chimeric reads can result from suboptimal PCR reactions when performing mixed template PCR.
+3. Few read counts were removed from the ASV table following contamination filtering (column DADA2 filter tax). Removal of a high percentage of read counts at this stage can indicate a high portion of reads amplified plastid sequences (chloroplast and mitochondria) and that your experimental design may need to be revised.
 
 ## Sample processing
 ### Trimming with Cutadapt
@@ -59,6 +60,11 @@ The ` Composition Bar Plot` gives a summary of the taxonomic profile of the samp
 This bar plot contains several features to enhance visualization. The taxonomic rank in taxa are grouped can be selected by clicking the buttons above the bar plot (from Kingdom to Species). To view all taxa present at the taxonomic rank Genus, click on the `Genus` button and select `No grouping`. In the chart below (displayed at the Species level), there are many low abundant taxa, which make the plot difficult to interpret. To simplify this plot, you can click on the `Species` button (or any other taxonomic ranking) and select `Grouping taxa < N% into ‘Others’` to group taxa <0.1%, <5% or <10% abundance into a group called ‘Others’. All taxa below the threshold relative abundance will now appear as one bar, titled ‘Others’. A list of all taxa present can be found under the bar plot, with additional information accessed by clicking the blue arrow at the bottom of the plot.
 
 ![Image4](../images/ampliseq/Image4.png)
+
+## Krona Plot
+In some cases, numerous taxa identified in one sample can contribute to overcrowding in the composition barplots. If a more detailed format is desired, the pipeline also produces krona reports for each sample. Krona reports display the taxa composition of each sample as a pie chart. Select a sample from the table on the left hand side of the screen. Mouse over a desired taxa and click on the highlighted section to expand it.
+
+
 
 ## Taxonomy Abundance Heatmap
 The `Taxonomy Abundance Heatmap` demonstrates the magnitude of taxa abundance in each sample as a color scale. Each column represents a sample, and each row represents each taxon. The color of each cell (tile) in the heat map represents the relative abundance of each taxa, with the key scale shown on the far right of the plot. The number of rows displayed can be expanded by dragging the bar at the bottom of the plot.
@@ -103,15 +109,7 @@ With this interactive plot, you can toggle between the different beta diversity 
 ## Differential abundance analyses
 The objective of differential abundance analysis is to identify taxa which differ statistically between samples and sample groups (if this information is provided). The method employed is ANCOM-BC ([Analysis of Compositions of Microbiomes with Bias Correction](https://www.nature.com/articles/s41467-020-17041-7)). ANCOM-BC estimates unknown sampling fractions (ratio of the observed taxa abundance in a sample to its actual abundance in the ecosystem) and uses this estimate to correct for sampling bias through a log-linear regression model. Results can be visualized in the `ANCOM-BC bar plot`.
 ### ANCOM-BC bar plot
-In the `ANCOM-BC bar plot`, the Y-axis represents each taxa and the X-axis represents the log fold change (LFC). Each bar represents the LFC of the absolute abundance of a taxon between treatment groups. A plot is produced for each treatment group pairwise comparison, which can be viewed by clicking the buttons above the plot. Only the top 20 significantly differentially abundant taxa are shown (multiple testing adjusted P value (q value) < 0.05).
-A positive LFC (LFC > 0) between Group A vs Group B indicates that relative abundance is significantly higher in Group A relative to Group B, whilst a negative LFC (LFC < 0) between Group A vs Group B indicates that relative abundance is significantly lower in group A. For example, in a ‘Control_vs_Treatment-A’ comparison, a negative LFC for taxa Escherichia coli indicates that the abundance of this taxa is significantly lower in the control group relative to the Treatment-A group (in other words, the abundance of this taxa is higher in the Treatment-A group).
-
-![Image9](../images/ampliseq/Image9.png)
-
-## Additional analyses: comparative diversity analysis
-In addition to performing analyses on your own samples, users have the opportunity to perform a comparative analysis with selected publicly available datasets. When this option is selected, an additional section will appear in the report: `Comparative diversity analysis`. In this section, diversity analyses have been recalculated, incorporating the reference dataset. `Alpha Rarefaction`, `Alpha Diversity` and `Beta Diversity` plots can be viewed here. Note: sample groupings can be hidden from a plot to simplify visualization by clicking on the group in the figure legend key, to the right of the plot. 
-
-![Image10](../images/ampliseq/Image10.png)
+In the ANCOM-BC bar plot, the Y-axis represents each taxa and the X-axis represents the log fold change (LFC). Each bar represents the LFC of the absolute abundance of a taxon between treatment groups. Only the top 50 significantly differentially abundant taxa are shown (multiple testing adjusted P value (q value) < 0.05). The second group “Group B” listed in the subheading above each plot in the format of “Group A vs Group B” is the reference group. A positive LFC (LFC > 0) between Group A vs Group B indicates that relative abundance is significantly higher in Group A relative to Group B, whilst a negative LFC (LFC < 0) between Group A vs Group B indicates that relative abundance is significantly lower in group A. For example, in a ‘Treatment-A vs Control’ comparison, a negative LFC for taxa Escherichia coli indicates that the abundance of this taxa is significantly lower in the Treatment-A group relative to the control group (in other words, the abundance of this taxa is higher in the Control group).
 
 ## FastQC
 Additional sequencing read quality metrics are provided at the end of the report, performed by the bioinformatic tool [`FastQC`](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/). Here, information on the quality score distribution across reads, per base sequences content (% of bases A, T, C and G) and much more is provided. For further information on these metrics, see the [FastQC help pages]( http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/).

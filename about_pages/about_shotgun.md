@@ -1,4 +1,4 @@
-# About aladdin-shotgun pipeline 
+# About MGscan Metagenomics pipeline 
 This pipeline is designed to conduct taxonomy profiling and diversity analysis on metagenome shotgun sequencing data. Please find the sample report [here](https://zymo-research.github.io/pipeline-resources/reports/shotgun_sample_report.html).
 
 ## Source of the pipeline
@@ -26,6 +26,8 @@ This pipeline is built using [Nextflow](https://www.nextflow.io/). A brief summa
 10. Present all results in above steps in a report ([`MultiQC`](http://multiqc.info/))
     
 For details, please find the source code [here](https://github.com/Zymo-Research/aladdin-shotgun).
+
+![Pipeline flowchart](../images/shotgun/flowchart.png)
 
 ## Default pipeline parameters
 

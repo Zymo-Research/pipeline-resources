@@ -1,4 +1,4 @@
-# About ampliseq pipeline
+# About MGscan 16S/18S/ITS pipeline
 This pipeline is designed to process microbial amplicon sequencing data, performing taxonomic assignment of the prokaryote 16S ribosomal RNA gene, the eukaryote 18S ribosomal RNA gene and the ITS (internal transcribed spacer). Supported data types include single- or paired-end Illumina and PacBio reads.
 
 ## Source of the pipeline
@@ -16,3 +16,5 @@ This pipeline was built using [Nextflow](https://www.nextflow.io/). A brief summ
 7. Presents all QC and analysis results in a comprehensive report ([`MultiQC`](https://multiqc.info/))
 
 For details, please find the source code [here]( https://github.com/Zymo-Research/aladdin-ampliseq).
+
+![Pipeline flowchart](../images/ampliseq/flowchart.png)

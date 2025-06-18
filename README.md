@@ -47,3 +47,9 @@ This report is generate using some samples from [this paper](https://pubmed.ncbi
 * [Sample report](https://zymo-research.github.io/pipeline-resources/reports/aladdin_genomics_sample_report.html)<br>
 This report is generate using some samples from [this paper](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-020-03934-3).
 * [Report documentation](report_docs/genomics_documentation.md)
+
+## Metatranscriptome assembly
+* [About page](about_pages/about_metatranscriptome.md)
+* [Sample report](https://zymo-research.github.io/pipeline-resources/reports/metatranscriptome_sample_report.html)<br>
+This report is generate using some samples from [this paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5187186).
+* [Report documentation](report_docs/metatranscriptome_documentation.md)

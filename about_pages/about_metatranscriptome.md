@@ -23,7 +23,7 @@ This pipeline is built using [Nextflow](https://www.nextflow.io/). A brief summa
     
 For details, please find the source code [here](https://github.com/Zymo-Research/aladdin-metatranscriptome-assembly).
 
-![Pipeline flowchart](../images/metatranscriptome/flowchart.png)
+![Pipeline flowchart](../images/metatranscriptome/aladdin_metatranscriptome_flowchart.png)
 
 ## Default pipeline parameters
 
